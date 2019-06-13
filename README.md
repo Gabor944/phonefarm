@@ -1,10 +1,10 @@
 # Phone Farm (ing)
 
-This is a guide for rebuilding the prototype for the farm stations of the phone farming projects. For more information about the project visit [phonefarm.eu](www.phonefarm.eu).
+This is a guide for rebuilding the farm-station protoype of the Phone Farm(ing) project. For more information about the project visit [phonefarm.eu](www.phonefarm.eu).
 
-This prototype is a modular simulation of the Phone Farm(ing) proposal. It has one technical compartment on the top with an acrylic light installation and two phone compartments with space for two phones each. Each compartment is lockable and provides charging for the phones.
+This prototype is a modular system to simulat a part of the Phone Farm(ing) proposal. It has one technical compartment on the top with an acrylic light installation and two phone compartments with space for two phones each. Every compartment is lockable and provides charging for the phones.
 
-In this version, it is also perfect for home use in the dining room or, for example, to lock away the phones during the meal. 
+In this version, it is also perfect for home use in the dining room or kictehn, for example, to lock away the phones during meals. 
 
 ## Requirements:
 
