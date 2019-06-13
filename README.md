@@ -10,7 +10,7 @@ In this version, it is also perfect for home use in the dining room or, for exam
 
 For the cabinet, we will use 
 
-- one sheet of 3mm plywood
+- one sheet of 3mm plywood (100x55cm)
 - one A5 sheet of 3mm acrylic
 - some adhesive fabric (I used poker table cover)
 - 4 locks (optional)
@@ -24,20 +24,18 @@ For the electronics, we'll need
 - Raspberry Pi
 - NeoPixel LED strip (30cm will be enough 60LEDs/m) with external power supply (5V)
 - shrinking tube (optional)
-- USB hub
+- USB hub (externally powered)
 - 4 charging cables
 - some wires
 - solder iron
 
 ## 1. step: cutting & print all parts
 
-Here you will find the Rhino and dxf files for cutting all components with the laser cutter. All parts are designed for 3mm plywood. I will add a parametric Fusion 360 model where the thickness of the material is adjustable.
+[Here](/cut_files/) you will find the Rhino and dxf files for cutting all components with the laser cutter. All parts are designed for 3mm plywood and 3mm acrylic. I will add a parametric Fusion 360 model where the thickness of the material is adjustable.
 
-In the cut file, you will find two compartments by default. You can add as many as you want. 
+In the cut file, you will find two phone compartments by default. You can add as many as you want. 
 
-Here you will find the Rhino and dxf file for the acrylic sheet. 
-
-Here you will find the 3D printing file for the joints for the default setting of one technical compartment and two phone compartments you will need eight joints in total. 
+[Here](/print_files/joint.stl) you will find the 3D printing file for the joints for the default setting of one technical compartment and two phone compartments you will need eight joints in total. 
 
 ## 2. step: add paint and fabric
 
