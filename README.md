@@ -1,14 +1,14 @@
 # Phone Farm (ing)
 
-This is a guide for rebuilding the farm-station protoype of the Phone Farm(ing) project. For more information about the project visit [phonefarm.eu](www.phonefarm.eu).
+This is a guide for rebuilding the farm-station prototype of the Phone Farm(ing) project. For more information about the project visit [phonefarm.eu](www.phonefarm.eu).
 
-This prototype is a modular system to simulat a part of the Phone Farm(ing) proposal. It has one technical compartment on the top with an acrylic light installation and two phone compartments with space for two phones each. Every compartment is lockable and provides charging for the phones.
+This prototype is a modular system to simulate a part of the Phone Farm(ing) proposal. It consists of one technical compartment on the top with an acrylic light installation and two compartments which can hold up to two phones each. Every compartment is lockable and provides charging for the phones.
 
-In this version, it is also perfect for home use in the dining room or kictehn, for example, to lock away the phones during meals. 
+In this version, it is also perfect for home use to lock away phones during mealtimes in the dining room or kitchen due it is desktop size.
 
 ## Requirements:
 
-For the cabinet, we will use 
+For the cabinet, we will use
 
 - one sheet of 3mm plywood (100x55cm)
 - one A5 sheet of 3mm acrylic
@@ -29,45 +29,53 @@ For the electronics, we'll need
 - some wires
 - solder iron
 
-## 1. step: cutting & print all parts
+## 1. Step: cutting & print all parts
 
-[Here](/cut_files/) you will find the Rhino and dxf files for cutting all components with the laser cutter. All parts are designed for 3mm plywood and 3mm acrylic. I will add a parametric Fusion 360 model where the thickness of the material is adjustable.
+Here you will find the Rhino and dxf files for cutting all components with the laser cutter. All parts are designed for 3mm plywood. I will add a parametric Fusion 360 model where the thickness of the material is adjustable.
 
-In the cut file, you will find two phone compartments by default. You can add as many as you want. 
+In the cut file, you will find two compartments by default. You can add as many as you want.
 
-[Here](/print_files/joint.stl) you will find the 3D printing file for the joints for the default setting of one technical compartment and two phone compartments you will need eight joints in total. 
+Here you will find the Rhino and dxf file for the acrylic sheet.
 
-## 2. step: add paint and fabric
+Here you will find the 3D printing file for the joints for the default setting of one technical compartment and two phone compartments you will need eight joints in total.
+
+## 2. Step: add paint and fabric
 
 After cutting the parts, test if they all fit together and the joints are working as they should. Assemble all three compartments for themselves and stuck them so that the joints fit perfectly into the holes.
 
-Now you can reassemble it again and paint the parts. Be careful not to paint them to wett as the plywood bends very easy. Let it dry properly.
+Now you can reassemble it again and paint the parts. The plywood bends very easily when wet so make sure it is fully dry before assembly.
 
-In the next step, you can add some fabric to the bottom part of the two phone compartments. Add the two doors well. Lay them in front of the bottom part like they would be when the chambers are open. Now stick the fabric so that the bottom pieces and the doors are stick together.
+In the next step, you can add some fabric to the bottom part of the two phone compartments and the two doors. Lay them in front of the bottom part like they would be when the chambers are open. Now stick the fabric so that the bottom pieces and the doors are stuck together.
 
-Assemble everything, if needed, add some wood glue but be careful with the fabric. I used crap type to fix the parts after glueing.
+Assemble everything, and if needed add some wood glue but be careful with the fabric. I used tape to fix the parts while the glue was drying.
 
 The basic built should be ready now.
 
-## 3. step: prepare the lighting 
+## 3. Step: prepare the lighting
 
-Take the piece of plywood with the tree on and add the lights. The light strip from BTF lighting I used is, but you can also use double-sided tape. This foto shows y arrangement. It is crucial to think about the order before sicking it to the wood as you have to connect each output of a strip (DO) to an input (Din). You will find the essential points marked on the photo. 
+Take the piece of plywood with the tree on and add the lights. The light strip from BTF lighting I used is, but you can also use double-sided tape. [This](/pictures/closeup_lightsheet.jpg) photo shows the arrangement. It is crucial to think about the order before sticking it to the wood as you have to connect each output of a strip (DO) to an input (Din). You will find the essential points marked on the photo.
 
-After adding all the lights, you need to connect them. I used flat cables, 3 for each connection. Be careful. You have to communicate from GND to GND, 5V to 5V and DO to Din. The order is essential for the programming later as the code is following the order the LEDs are connected. I went from left to right in serpentine as seen on the photo. 
+![](/pictures/closeup_lightsheet_commented.jpg)
 
-If not already connected, you can add the power supply to the first LED. I used a 5V AC and would recommend doing the same. You can check which one of the sides is V and GND with the multimeter. I used some shrinking tubes to isolate the connections properly, but you can also use isolation tape, of course. 
+After adding all the lights, you need to connect them. I used flat cables, 3 for each connection. Be careful - you have to communicate from GND to GND, 5V to 5V and DO to Din. The order is essential for the programming later as the code is following the order the LEDs are connected. I went from left to right in serpentine as seen on the photo.
+
+![](/pictures/soldering_closetoend.jpg)
+
+If not already connected, you can add the power supply to the first LED. I used a 5V AC and would recommend doing the same. You can check which one of the sides is V and GND with the multimeter. I used some shrinking tubes to isolate the connections properly, but you can also use isolation tape, of course.
 
 In the final step, you have to add the signal wire and another ground wire for the Pi. Keep in mind the Pi has male pins, so it makes sense to add some wires with female connection. Add a wire to the ground connection and a wire to the Din pin of the first LED. Your final assembly should look like this:
 
-Optional step to test your lights: Before heading to the Raspberry Pi, which is a bit more complex, you can test your lights with an Adruino. Connect the tree to GND and Pin 6 on your Arduino and connect to power and the Arduino to your computer. Open Arduino IDE. Select Tools > Manage Libraries and look for Adafruit NeoPixel. Install this  library and go to File > Examples > Adafriut NeoPixel > strandtest. Change the LED_COUNT to the number of LEDs you used. If you built the same way, it would be 37. Upload the code, and now the tree should freak out in all different colours. If not, check all your connections again with the multimeter.
+Optional step to test your lights: Before heading to the Raspberry Pi, which is a bit more complex, you can test your lights with an Adruino. Connect the tree to GND and Pin 6 on your Arduino and connect to power and the Arduino to your computer. Open Arduino IDE. Select Tools > Manage Libraries and look for Adafruit NeoPixel. Install this library and go to File > Examples > Adafriut NeoPixel > strandtest. Change the LED_COUNT to the number of LEDs you used. If you built the same way, it would be 37. Upload the code, and now the tree should freak out in all different colours. If not, check all your connections again with the multimeter.
 
-## 4. step: Raspberry Pi and Python
+## 4. Step: Raspberry Pi and Python
 
-In this step, we will set up the Raspberry Pi for controlling the LEDs with Python. Essential requirements for this step: A Pi with [Rasbian](https://www.raspberrypi.org/downloads/) installed, [VNC(optional but I prefer, or you can use a display, keyboard and mouse as well of course)](https://www.raspberrypi.org/documentation/remote-access/vnc/) and [SSH connection](https://www.raspberrypi.org/documentation/remote-access/ssh/). I linked guides to all three. I also used [Thonny Python IDE](https://thonny.org) as an editor, but you can use any editor you prefer. We will use Python 3 for the code. 
+In this step, we will set up the Raspberry Pi for controlling the LEDs with Python. Essential requirements for this step: A Pi with [Rasbian](https://www.raspberrypi.org/downloads/) installed, [VNC(optional but I prefer, or you can use a display, keyboard and mouse as well of course)](https://www.raspberrypi.org/documentation/remote-access/vnc/) and [SSH connection](https://www.raspberrypi.org/documentation/remote-access/ssh/). I linked guides to all three. I also used [Thonny Python IDE](https://thonny.org) as an editor, but you can use any editor you prefer. We will use Python 3 for the code.
 
 ### Wiring
 
-Connect the data wire of the LED to GPIO18 ([Raspbeeri Pi pinout](https://pinout.xyz)) and the GND wire to any Ground pin. You will find a fritzing scheme in the repo. 
+![](/pictures/pi_wiring.jpg)
+
+Connect the data wire of the LED to GPIO18 ([Raspberry Pi pinout](https://pinout.xyz)) and the GND wire to any Ground pin. You will find a fritzing scheme in the repo.
 
 Before we start to code, we have to install some libraries and [CircuitPython](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux). The following is the official guide to install CircuitPython.
 
@@ -115,9 +123,9 @@ The result should be this:
 
 #### Installing Python libraries
 
-For the next step, make sure you have Python 3 installed. 
+For the next step, make sure you have Python 3 installed.
 
-Raspberry Pi GPIO library: 
+Raspberry Pi GPIO library:
 
 ```shell
 pip3 install RPI.GPIO
@@ -153,7 +161,7 @@ print("SPI ok!")
 print("done!")
 ```
 
-You can also download the code to the Pi and run it with 
+You can also download the code to the Pi and run it with
 
 ```shell
 python3 blinkatest.py
@@ -175,7 +183,7 @@ Next step is to install the NeoPixel library.
 sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 ```
 
-Now we should be able to write code in python and control the pins. You can test with the [following code](/green_LED_test.py). All LEDs should be green. It is essential to run all the codes as root so every code should be executed similar to this
+Now we should be able to write code in python and control the pins. You can test with the [following code](/programming_files/green_LED_test.py). All LEDs should be green. It is essential to run all the codes as root so every code should be executed similar to this
 
 ```shell
 sudo python3 green_LED_test.py
@@ -207,15 +215,17 @@ pixels.fill((0, 255, 0))
 pixels.show()
 ```
 
-The next step is to identify each LED with a number. I used a [sheet](/LED_IDs.xlsx) for that and added the numbers of the LEDs in the order I connected them. It starts at 0 and not with one. If you built the tree the same way I did, you could follow my sheet. You can test it by changing the green test program and replace the pixels.fill line with
+![](/pictures/green_ligjhting_top.jpg)
+
+The next step is to identify each LED with a number. I used a [sheet](/programming_files/LED_IDs.xlsx) for that and added the numbers of the LEDs in the order I connected them. It starts at 0 and not with one. If you built the tree the same way I did, you could follow my sheet. You can test it by changing the green test program and replace the pixels.fill line with
 
 ```python
 pixels[0] = (255, 0, 0)
 ```
 
-You can replace the 0 with any ID of your LED array and check if it is matching with your sheet. 
+You can replace the 0 with any ID of your LED array and check if it is matching with your sheet.
 
-With the following [code](/gradient_LEDs.py), we add a gentle gradient from bottom to top from blue to green. You will find a [guide](https://circuitpython.readthedocs.io/projects/neopixel/en/latest/) here how the NeoPixel library works precisely and how to change colours. 
+With the following [code](/programming_files/gradient_LEDs.py), we add a gentle gradient from bottom to top from blue to green. You will find a [guide](https://circuitpython.readthedocs.io/projects/neopixel/en/latest/) here how the NeoPixel library works precisely and how to change colours.
 
 ```python
 # create a nice gradient from blue to green
@@ -298,9 +308,11 @@ pixels[29] = two_green
 pixels.show()
 ```
 
-## step5: device managment
+![](/pictures/gradient_lighting.jpg)
 
-The goal is to set the lights up as if a phone is connected for charging a part of the tree lights up. Therefore we are us lsusb as device manager in Linux to monitor how many devices are connected. First, we need to connect the USB hub to the Pi to see what is amount 0 if the hub is connected. In my case, it is 6. You can type in terminal lsusb and count the devices popping up. 
+## Step 5: device managment
+
+The goal is to set the lights up as if a phone is connected for charging a part of the tree lights up. Therefore we are us lsusb as device manager in Linux to monitor how many devices are connected. First, we need to connect the USB hub to the Pi to see what is amount 0 if the hub is connected. In my case, it is 6. You can type in terminal lsusb and count the devices popping up.
 
 ```python
 #Phone Farm(ing) demo code
@@ -459,10 +471,6 @@ while True:
 
 For every connected device, the tree lights up a bit more.
 
-## step 6: final assembling
+## Step 6: final assembling
 
-Now we can assemble everything. Add the acrylic sheet to the lights and fix it with some screws through the holes as seen on the photos.
-
-![](/pictures/screws.jpg)
-
- Place all electronics in the top compartment. The holes in the back of the box are for the charging wires going to the phone compartments. Connect all chambers with the joints and add the acrylic tree on the top like in the photo. You can add locks each door to make them, or you can also add some magnets if it's for your provide use to make them closable. It is essential that the locks are fitting the holes and the cutouts of the sheets. Measure your locks before you cut and adjust the files when necessary. 
+Now we can assemble everything. Add the acrylic sheet to the lights and fix it with some screws through the holes as seen on the photos. Place all electronics in the top compartment. The holes in the back of the box are for the charging wires going to the phone compartments. Connect all chambers with the joints and add the acrylic tree on the top like in the photo. You can add locks each door to make them, or you can also add some magnets if it's for your provide use to make them closable. It is essential that the locks are fitting the holes and the cutouts of the sheets. Measure your locks before you cut and adjust the files when necessary.
