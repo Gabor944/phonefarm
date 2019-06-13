@@ -461,4 +461,8 @@ For every connected device, the tree lights up a bit more.
 
 ## step 6: final assembling
 
-Now we can assemble everything. Add the acrylic sheet to the lights and fix it with some screws through the holes as seen on the photos. Place all electronics in the top compartment. The holes in the back of the box are for the charging wires going to the phone compartments. Connect all chambers with the joints and add the acrylic tree on the top like in the photo. You can add locks each door to make them, or you can also add some magnets if it's for your provide use to make them closable. It is essential that the locks are fitting the holes and the cutouts of the sheets. Measure your locks before you cut and adjust the files when necessary. 
+Now we can assemble everything. Add the acrylic sheet to the lights and fix it with some screws through the holes as seen on the photos.
+
+![](/pictures/screws.jpg)
+
+ Place all electronics in the top compartment. The holes in the back of the box are for the charging wires going to the phone compartments. Connect all chambers with the joints and add the acrylic tree on the top like in the photo. You can add locks each door to make them, or you can also add some magnets if it's for your provide use to make them closable. It is essential that the locks are fitting the holes and the cutouts of the sheets. Measure your locks before you cut and adjust the files when necessary. 
