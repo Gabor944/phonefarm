@@ -9,7 +9,7 @@ This is a guide for rebuilding the farm-station prototype of the Phone Farm(ing)
 The prototype is a desktop version of the stations and showcases to approach of modularity and inveracity. It is divided
 into two main components. The component on the top is the technical compartment which houses all electronics like the Raspberry Pi, a USB charging hub and the lights. On the top end, a sheet of acrylic is applied with interactive
 backlighting that reacts on the number of phones connected to the farm. The second main component is the phone compartment. Each of them provides two lockable spaces for phones. All chambers are connected with 3D printed
-joints, which makes it easy to add or to remove compartments depending on the requirement. 
+joints, which makes it easy to add or to remove compartments depending on the requirement.
 
 The code managing the interactive lights is written in Python.
 
@@ -94,7 +94,7 @@ In this step, we will set up the Raspberry Pi for controlling the LEDs with Pyth
 
 ![](pictures/pi_wiring.jpg)
 
-Connect the data wire of the LED to GPIO18 ([Raspberry Pi pinout](https://pinout.xyz)) and the GND wire to any GND pin. 
+Connect the data wire of the LED to GPIO18 ([Raspberry Pi pinout](https://pinout.xyz)) and the GND wire to any GND pin.
 
 Before we start to code, we have to install some libraries and [CircuitPython](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux). The following is the official guide to install CircuitPython.
 
@@ -509,6 +509,6 @@ Now we can assemble everything. Add the acrylic sheet to the lights and fix it w
 
 ![](pictures/close_up_withphone.jpg)
 
-![](pictures/Phone_Farming_foto (12 von 12).jpg)
+![](pictures/Phone_Farming_foto.jpg)
 
-Feel free to share pictures, suggestions or thoughts about this project. 
+Feel free to share pictures, suggestions or thoughts about this project.
